@@ -1,0 +1,12 @@
+/ (el inicio de todo)
+├── home
+│   └── derick (aca es donde guardo mis carpetas y tareas)
+├── etc (archivos de configuracion)
+├── var
+│   └── log (aca el sistema anota sus errores)
+├── bin (donde viven los comandos como ls o mkdir)
+├── tmp (una carpeta para archivos que no importan)
+├── dev (aca estan los discos y el hardware)
+├── boot (los archivos para que la pc arranque)
+├── proc (info del sistema y del procesador)
+└── opt (programas extra que instale)
