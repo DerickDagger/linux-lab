@@ -1,0 +1,113 @@
+# ~/.bash_aliases - Aliases y funciones personalizadas
+# Semana 4: Editores y Dotfiles
+
+# ============ N A V E G A C I O N ============
+
+# Listado mejorado
+alias ll='ls -lhF --color=auto'
+alias la='ls -lhaF --color=auto'
+alias l='ls -CF --color=auto'
+
+# Navegacion rapida
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias ~='cd ~'
+
+# Ir a directorios frecuentes
+alias lab='cd ~/linux-lab'
+
+# ============ SEGURIDAD ============
+
+# Pedir confirmacion antes de borrar, copiar o mover
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# ============ SISTEMA ============
+
+# Limpiar pantalla
+alias c='clear'
+alias cls='clear'
+
+# Ver uso de disco de forma legible
+alias df='df -hT'
+alias du='du -ah'
+
+# Ver memoria en uso
+alias mem='free -h'
+
+# Ver procesos activos de forma amigable
+alias procesos='ps aux | sort -k3 -rn | head -20'
+
+# ============ RED ============
+
+# Ver mi IP local
+alias miip='hostname -I | awk '\''{print $1}'\'
+
+# Hacer ping a 5 paquetes solamente
+alias ping='ping -c 5'
+
+# ============ GIT ============
+
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git log --oneline --graph --all'
+alias gd='git diff'
+alias gb='git branch'
+
+# ============ FUNCIONES ============
+
+# Crear directorio y entrar
+mkcd() {
+	mkdir -p "$1" && cd "$1"
+	echo "Directorio creado y activo: $(pwd)"
+}
+# Extraer archivos comprimidos
+extraer() {
+   if [ ! -f "$1" ]; then
+	echo "Error: archivo no encontrado : $1"
+	return 1
+   fi
+   case "$1" in
+	*.tar.gz|*.tgz) tar xzf "$1"	;;
+	*.tar.bz2)	tar xjf "$1"	;;
+	*.tar.xz) 	tar xJf "$1"	;;
+	*.zip)		unzip "$1"	;;
+	*.gz) 		gunzip "$1" 	;;
+	*.bz2)		bunzip2 "$1" 	;;
+	*.tar)		tar xf "$1" 	;;
+	*)
+	   echo "Formato no reconocido: $1"
+	   return 1
+	   ;;
+	esac
+	echo "Extraido correctamente: $1"
+}
+
+# Buscar texto recursivamente en el directorio actual
+buscar() {
+   if [ -z "$1" ]; then
+	echo "Uso: buscar <texto> [directorio]"
+	return 1
+   fi
+   local dir="${2:-.}"
+   grep -rn --color=auto "$1" "$dir"
+}
+
+# Ver tamaños de los 10 elementos mas grandes en el directorio actual
+duh() {
+du -ah "${1:-.}" 2>/dev/null | sort -h | tail -10
+}
+
+# Backup rapido de un archivo
+bak() {
+   if [ -f "$1" ]; then
+	cp "$1" "${1}.bak.$(date +%Y%m%d)"
+	echo "Backup creado: ${1}.bak.$(date +%Y%m%d)"
+   else
+	echo "Archivo no encontrado: $1"
+   fi
+}
