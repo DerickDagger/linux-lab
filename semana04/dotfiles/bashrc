@@ -1,2 +1,46 @@
 # ~/. bashrc - Configuracion del entorno de trabajo
 # Repositorio: github.com/DerickDagger/linux-lab
+
+# Si la shell no es interactiva, no hacer nada
+case $- in
+   *i*) ;;
+     *) return ;;
+esac
+
+# ---- Historial ----
+HISTSIZE=5000
+HISTFILESIZE=10000
+HISTCONTROL=ignoredups:ignorespace	 # No duplicados ni espacios
+shopt -s histappend		 	 # Agregar al historial, no reemplazar
+
+# ---- Opciones de shell ----
+shopt -s checkwinsize			 # Actualiza filas/columnas al cambiar tamanio
+shopt -s cdspell			 # Correcciion de errores tipograficos en cd
+shopt -s globstar			 # ** expande subdirectorios recursivamente
+
+# ---- Variables de entorno ----
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
+export LANG='es_ES.UTF -8'
+
+# ---- PATH personalizado ----
+export PATH="$HOME/scripts:$PATH"
+
+# ---- Prompt PS1 personalizado ----
+# Amarillo: usuario@host, Cian: directorio, Reset al final
+PS1='\[\e[1;33m\]\u@\h\[\e[0m\]:\[\e[1;36m\]\w\[\e[0m\]\$'
+
+# ---- Cargar aliases ----
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# ---- Autocompletado ----
+if ! shopt -oq posix ; then
+   if [ -f /usr/share/bash-completion/bash_completion ];
+     then
+      . /usr/share/bash-completion/bash_completion
+   fi
+fi
+
