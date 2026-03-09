@@ -1,0 +1,54 @@
+" ~/.vimrc - Configuracion de vim
+" Semana 4: Editores y Dotfiles
+
+" ---- Basico ----
+set nocompatible	" No compatible con vim antiguo
+syntax on 		" Resaltado de sintaxis
+set encoding=utf-8	" Codificacion de caracteres
+
+" ---- Apariencia ----
+set number 		" Mostrar numeros de lınea
+set cursorline 		" Resaltar la lınea actual
+set showmode 		" Mostrar el modo actual en la barra
+set ruler 		" Mostrar posicion del cursor
+set laststatus=2 	" Barra de estado siempre visible
+
+
+" ---- Indentacion ----
+set tabstop=4 		" Tab equivale a 4 espacios
+set shiftwidth=4 	" Indentacion automatica: 4 espacios
+set expandtab 		" Insertar espacios en lugar de tab
+set autoindent 		" Conservar la indentacion de la lınea anterior
+set smartindent 	" Indentacion inteligente para codigo
+
+" ---- Busqueda ----
+set incsearch 		" Buscar mientras se escribe
+set hlsearch 		" Resaltar resultados de busqueda
+set ignorecase 		" Busqueda insensible a mayusculas/minusculas
+set smartcase 		" ...excepto si hay mayusculas en el patron
+
+" ---- Comportamiento ----
+set backspace=indent,eol,start 	" Backspace funciona en todo
+set wrap 			" Envolver lıneas largas
+set linebreak 			" Cortar en palabras, no encaracteres
+set scrolloff=5 		" Mantener 5 lıneas de contexto al hacer scroll
+set wildmenu 			" Autocompletado mejorado de comandos
+
+" ---- Archivos ----
+set nobackup 		" No crear archivos .bak
+set noswapfile 		" No crear archivos .swp
+
+" ---- Mapeos personalizados ----
+" jj en modo Insert equivale a Esc
+inoremap jj <Esc>
+
+" Guardar con Ctrl+S (requiere: stty -ixon en .bashrc)
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>a
+
+" Limpiar el resaltado de busqueda con Esc en modo Normal
+nnoremap <Esc> :nohlsearch<CR>
+
+" Mover lıneas completas con Alt+j y Alt+k
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
