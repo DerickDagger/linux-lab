@@ -51,6 +51,25 @@ case "$MODO" in
 esac
 
 echo "$SEPARADOR"
-printf "   REPORTE DEL SISTEMA - sysinfo.sh v%s\n" "$VERSION"
+printf "REPORTE DEL SISTEMA - sysinfo.sh v%s\n" "$VERSION"
 echo "$SEPARADOR"
 echo ""
+
+# === Seccion 1: Informacion general ===
+seccion_general() {
+	echo "[ INFORMACION DEL SISTEMA ]"
+	echo "$SEPARADOR_SEC"
+	printf "   %-18s %s\n" "Hostname:" 	"$(hostname)"
+	printf "   %-18s %s\n" "Usuario:" 	"$USER"
+	printf "   %-18s %s\n" "Sistema:" 	"$(uname -s)"
+	printf "   %-18s %s\n" "Kernel:" 	"$(uname -r)"
+	printf "   %-18s %s\n" "Arquitectura:" 	"$(uname -m)"
+	printf "   %-18s %s\n" "Fecha/Hora:" 	"$(date '+%d/%m/%Y %H:%M:%S')"
+	printf "   %-18s %s\n" "Encendido:" 	"$(uptime -p)"
+	echo ""
+}
+
+# === Ejecutar segun el modo ===
+if [ "$MODO" = "all" ]; then
+   seccion_general
+fi
