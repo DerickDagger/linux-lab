@@ -69,7 +69,42 @@ seccion_general() {
 	echo ""
 }
 
+# === Seccion 2: CPU ===
+seccion_cpu() {
+	echo "[ CPU ]"
+	echo "$SEPARADOR_SEC"
+	nucleos=$(nproc)
+	carga=$(uptime | awk -F'load average:' '{print $2}' | awk '{print $1}' | tr -d ',')
+	printf "  %-18s %s\n" "Nucleos:" 	"$nucleos"
+	printf "  %-18s %s\n" "Carga (1 min):" 	"$carga"
+	echo ""
+}
+
+# === Seccion 3: Memoria RAM ===
+seccion_memoria() {
+	echo "[ MEMORIA RAM ]"
+	echo "$SEPARADOR_SEC"
+	mem_total=$(free -h | awk '/^Mem:/ {print $2}')
+	mem_usado=$(free -h | awk '/^Mem:/ {print $3}')
+	mem_libre=$(free -h | awk '/^Mem:/ {print $4}')
+	swap_total=$(free -h | awk '/^Swap:/ {print $2}')
+	swap_usado=$(free -h | awk '/^Swap:/ {print $3}')
+
+	printf "  %-18s %s\n" "RAM total:" 	"$mem_total"
+	printf "  %-18s %s\n" "RAM usada:" 	"$mem_usado"
+	printf "  %-18s %s\n" "RAM libre:" 	"$mem_libre"
+	printf "  %-18s %s\n" "Swap total:" 	"$swap_total"
+	printf "  %-18s %s\n" "Swap usado:" 	"$swap_usado"
+	echo ""
+}
+
 # === Ejecutar segun el modo ===
-if [ "$MODO" = "all" ]; then
-   seccion_general
-fi
+case "$MODO" in
+   all)
+	seccion_general
+	seccion_cpu
+	seccion_memoria
+	;;
+   cpu) seccion_cpu ;;
+   mem) seccion_memoria ;;
+esac
