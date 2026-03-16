@@ -12,6 +12,7 @@
 ./sysinfo.sh --mem     # Solo memoria
 ./sysinfo.sh --disk    # Solo disco
 ./sysinfo.sh --proc    # Solo procesos
+./sysinfo.sh --net     # Solo red (Desafio bonus)
 ./sysinfo.sh --version # Version del script
 ./sysinfo.sh --help    # Ayuda
 ```
