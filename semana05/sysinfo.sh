@@ -22,6 +22,7 @@ uso() {
 	echo "	--mem 		Solo memoria"
 	echo "	--disk 		Solo disco"
 	echo "	--proc 		Solo procesos"
+	echo "  --net 		Solo red"
 	echo "	--version 	Version del script"
 	echo "	--help 		Esta ayuda"
 	echo ""
@@ -105,6 +106,15 @@ seccion_procesos() {
 	echo ""
 }
 
+# === Seccion 6: Red (Bonus) ===
+seccion_red() {
+	echo "[ RED ]"
+	echo "$SEPARADOR_SEC"
+	ip_local=$(hostname -i)
+	printf "  %-20s %s\n" "IP Local:" "$ip_local"
+	echo ""
+}
+
 # === Procesar argumentos ===
 MODO="${1:-all}"
 
@@ -114,6 +124,7 @@ case "$MODO" in
 	--mem) 		MODO="mem" 	;;
 	--disk) 	MODO="disk"	;;
 	--proc)	 	MODO="proc"	;;
+	--net)		MODO="net"	;;
 	--version)	echo "sysinfo.sh version $VERSION"; exit 0 ;;
 	--help|-h) 	uso ;;
 	*)
@@ -135,9 +146,11 @@ case "$MODO" in
 	seccion_memoria
 	seccion_disco
 	seccion_procesos
+	seccion_red
 	;;
    cpu) seccion_cpu ;;
    mem) seccion_memoria ;;
    disk) seccion_disco ;;
    proc) seccion_procesos ;;
+   net) seccion_red ;;
 esac
