@@ -32,28 +32,6 @@ uso() {
 	exit 2
 }
 
-# === Procesar argumentos ===
-MODO="${1:-all}"
-
-case "$MODO" in
-	--all|"all") 	MODO="all"	;;
-	--cpu) 		MODO="cpu"	;;
-	--mem) 		MODO="mem" 	;;
-	--disk) 	MODO="disk"	;;
-	--proc)	 	MODO="proc"	;;
-	--version)	echo "sysinfo.sh version $VERSION";
-	exit 0 ;;
-	--help|-h) 	uso ;;
-	*)
-	echo " Error: opcion desconocida '$MODO'"
-	uso
-	;;
-esac
-
-echo "$SEPARADOR"
-printf "REPORTE DEL SISTEMA - sysinfo.sh v%s\n" "$VERSION"
-echo "$SEPARADOR"
-echo ""
 
 # === Seccion 1: Informacion general ===
 seccion_general() {
@@ -126,6 +104,28 @@ seccion_procesos() {
 	    awk '{printf "  %-8s %-5s %-5s %s\n", $2, $3, $4, $11}'
 	echo ""
 }
+
+# === Procesar argumentos ===
+MODO="${1:-all}"
+
+case "$MODO" in
+	--all|"all") 	MODO="all"	;;
+	--cpu) 		MODO="cpu"	;;
+	--mem) 		MODO="mem" 	;;
+	--disk) 	MODO="disk"	;;
+	--proc)	 	MODO="proc"	;;
+	--version)	echo "sysinfo.sh version $VERSION"; exit 0 ;;
+	--help|-h) 	uso ;;
+	*)
+	   echo " Error: opcion desconocida '$MODO'"
+	   uso
+	   ;;
+esac
+
+echo "$SEPARADOR"
+printf "REPORTE DEL SISTEMA - sysinfo.sh v%s\n" "$VERSION"
+echo "$SEPARADOR"
+echo ""
 
 # === Ejecutar segun el modo ===
 case "$MODO" in
