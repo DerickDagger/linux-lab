@@ -59,13 +59,13 @@ echo ""
 seccion_general() {
 	echo "[ INFORMACION DEL SISTEMA ]"
 	echo "$SEPARADOR_SEC"
-	printf "   %-18s %s\n" "Hostname:" 	"$(hostname)"
-	printf "   %-18s %s\n" "Usuario:" 	"$USER"
-	printf "   %-18s %s\n" "Sistema:" 	"$(uname -s)"
-	printf "   %-18s %s\n" "Kernel:" 	"$(uname -r)"
-	printf "   %-18s %s\n" "Arquitectura:" 	"$(uname -m)"
-	printf "   %-18s %s\n" "Fecha/Hora:" 	"$(date '+%d/%m/%Y %H:%M:%S')"
-	printf "   %-18s %s\n" "Encendido:" 	"$(uptime -p)"
+	printf "  %-18s %s\n" "Hostname:" 	"$(hostname)"
+	printf "  %-18s %s\n" "Usuario:" 	"$USER"
+	printf "  %-18s %s\n" "Sistema:" 	"$(uname -s)"
+	printf "  %-18s %s\n" "Kernel:" 	"$(uname -r)"
+	printf "  %-18s %s\n" "Arquitectura:" 	"$(uname -m)"
+	printf "  %-18s %s\n" "Fecha/Hora:" 	"$(date '+%d/%m/%Y %H:%M:%S')"
+	printf "  %-18s %s\n" "Encendido:" 	"$(uptime -p)"
 	echo ""
 }
 
@@ -98,13 +98,26 @@ seccion_memoria() {
 	echo ""
 }
 
+# === Seccion 4: Disco ===
+seccion_disco() {
+	echo "[ USO DE DISCO ]"
+	echo "$SEPARADOR_SEC"
+	printf "  %-20s %6s %6s %6s %5s\n" "Particion" "Total" "Usado" "Libre" "Uso%"
+	echo "$(printf '%.0s-' {1..48})"
+	df -h | grep -v "^tmpfs\|^udev\|^Filesystem" | \
+	     awk '{printf "  %-20s %6s %6s %6s %5s\n", $6, $2, $3, $4, $5}'
+	echo ""
+}
+
 # === Ejecutar segun el modo ===
 case "$MODO" in
    all)
 	seccion_general
 	seccion_cpu
 	seccion_memoria
+	seccion_disco
 	;;
+   disk) seccion_disco ;;
    cpu) seccion_cpu ;;
    mem) seccion_memoria ;;
 esac
