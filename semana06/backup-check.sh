@@ -169,3 +169,21 @@ fi
 verificar_archivos
 verificar_antiguedad
 verificar_tamanio
+
+# === Estado final ===
+log "INFO" "=== Verificacion completada ==="
+
+case "$estado_global" in
+   OK)
+	log "OK"	"RESULTADO: todos los checks pasaron correctamente."
+	exit 0
+	;;
+   WARNING)
+	log "WARNING"	"RESULTADO: verificacion completada con advertencias."
+	exit 0
+	;;
+   ERROR)
+	log "ERROR"	"RESULTADO: se detectaron errores que requieren atencion."
+	exit 1
+	;;
+esac
