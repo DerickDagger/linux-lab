@@ -1,2 +1,34 @@
 semana03/sample.log
 semana03/analysis-report.txt
+# Archivos temporales
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups
+*.bak
+*.backup
+backup/
+
+# Configuraciones locales
+.env
+local-config.sh
+secrets.txt
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# Directorios de prueba
+test-data/
+scratch/
+temp/
