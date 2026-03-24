@@ -2,7 +2,7 @@
 
 ## Descripcion
 
-'backup-check.sh' valida el estado de un directorio de backups.
+`backup-check.sh` valida el estado de un directorio de backups.
 Verifica existencia, contenido, antiguedad y tamaño, y emite un diagnostico con niveles OK / WARNING / ERROR.
 
 ## Uso
