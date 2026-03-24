@@ -6,6 +6,7 @@
 - Configurar Git correctamente
 
 ## Contenido
+
 ```
 semana01/
 ├── README.md
@@ -13,46 +14,62 @@ semana01/
 ├── filesystem-diagram.txt
 └── ejemplos-practicos.md
 ```
-filesystem-map.md - Documentacion personal del uso de directorios
-filesystem-diagram.txt - Un Diagrama visual simple de como se ve la estructura de carpetas
-ejemplos-practicos.md - Comandos que probe y que me parecieron utiles
+- `filesystem-map.md` - Documentación personal del uso de directorios
+- `filesystem-diagram.txt` - Un diagrama visual simple de la estructura de carpetas
+- `ejemplos-practicos.md` - Comandos que probé y que me parecieron útiles
 
-## Comandos que mas use
-- ls -la (para ver todo, incluso archivos ocultos)
-- cd .. (para subir de nivel)
-- pwd (para cuando no se donde estoy parado)
-- git status (lo uso a cada rato para ver que me falta guardar)
+## Comandos Aprendidos
 
-## Git Basico
+### Navegación
+- `pwd` Para saber donde me encuentro
+- `ls -la` Para ver todo, incluso archivos ocultos
+- `cd` Para cambiar directorio
+- `cd ..` Para subir de nivel
+- `tree` - Visualizar estructura
 
-    git init - Inicializar repositorio
+### Ayuda
+- `man` - Manual pages
+- `--help` - Ayuda rápida
 
-    git add - Agregar al staging area
-
-    git commit - Guardar cambios
-
-    git status - Ver estado
-
-    git log - Ver historial
+### Git Básico
+- `git init` - Inicializar repositorio
+- `git add` - Agregar al staging area
+- `git commit` - Guardar cambios
+- `git status` - Ver estado
+- `git log` - Ver historial
 
 ## Checklist
+  - [x] Repositorio Git inicializado
+  - [x] `filesystem-map.md` completo (10+ directorios)
+  - [x] `filesystem-diagram.txt` creado
+  - [x] `ejemplos-practicos.md` con comandos
+  - [x] Mínimo 5 commits descriptivos
+  - [x] Repositorio en GitHub
 
-    [x] Repositorio git inicializado
+## Ejecución
 
-    [x] filesystem-map.md completo (10+ directorios)
+```bash
+# Navegar por el sistema
+cd /
+ls -la
+pwd
 
-    [x] filesystem-diagram.txt creado
+# Explorar con tree
+tree -L 1 /
 
-    [x] ejemplos-practicos.md con comandos
-
-    [x] Minimo 5 commits descriptivos
-
-    [x] Repositorio en GitHub
+# Probar ejemplos
+ls -l
+cd /etc
+cd ~
+cd -
+cat /proc/cpuinfo | grep "model name"
+free -h
+find /home/derick -name "*.md"
+history | tail -n 10
+```
 
 ## Recursos
 
-    Man pages: ´man ls´, ´man bash´
-
-    FHS (Filesystem Hierarchy Standard)
-
-    GitHub: https://www.google.com/search?q=https://github.com/DerickDagger/linux-lab
+- Man pages: `man ls`, `man bash`
+- FHS (Filesystem Hierarchy Standard)
+- GitHub: https://github.com/DerickDagger/linux-lab
