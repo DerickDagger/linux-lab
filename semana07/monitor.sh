@@ -12,6 +12,21 @@ UMBRAL_RAM=85
 INTERVALO=10
 MAX_ITER=0 	# 0 = sin limite
 
+uso() {
+    echo "Uso: $0 [opciones]"
+    echo " "
+    echo "   --intervalo N	Segundos entre comprobaciones"
+    echo "   --max N		Max. iteraciones (0= sin limite)"
+    echo "   --umbral-disco N	Alerta de disco en %"
+    echo "   --umbral-ram N	Alerta de RAM en %"
+    echo "   --version		Version del script"
+    echo " "
+    echo "Ejemplos:"
+    echo "   $0 --intervalo 5 --max 12"
+    echo "   $0 --umbral-disco 70"
+    exit 2
+}
+
 # Retorna el porcentaje de uso de la particion raiz
 uso_disco() {
     df / | awk 'NR==2 {gsub(/%/,"",$5); print $5}'
@@ -39,19 +54,25 @@ registrar() {
 	"$ts" "$nivel" "$mensaje" | tee -a "$LOGFILE"
 }
 
-uso() {
-    echo "Uso: $0 [opciones]"
-    echo " "
-    echo "   --intervalo N	Segundos entre comprobaciones"
-    echo "   --max N		Max. iteraciones (0= sin limite)"
-    echo "   --umbral-disco N	Alerta de disco en %"
-    echo "   --umbral-ram N	Alerta de RAM en %"
-    echo "   --version		Version del script"
-    echo " "
-    echo "Ejemplos:"
-    echo "   $0 --intervalo 5 --max 12"
-    echo "   $0 --umbral-disco 70"
-    exit 2
+resumen_log() {
+    echo ""
+    echo "==========================================="
+    echo "           RESUMEN DE LA SESIÓN"
+    echo "==========================================="
+    local total alertas
+    total=$(grep -c "\[ INFO	\]" "$LOGFILE" 2>/dev/null || echo 0)
+    alertas=$(grep -c "\[ ALERTA \]" "$LOGFILE" 2>/dev/null || echo 0)
+
+    printf "%-25s %d\n" "Comprobaciones totales:" "$total"
+    printf "%-25s %d\n" "Alertas emitidas:" "$alertas"
+    echo ""
+    echo "Últimas entradas:"
+
+    # Leer el log con while y mostrar las últimas 3 líneas
+    tail -3 "$LOGFILE" | while IFS= read -r linea; do
+        echo "	  $linea"
+    done
+    echo "==========================================="
 }
 
 # Procesar argumentos con while
