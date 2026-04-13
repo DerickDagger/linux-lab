@@ -21,7 +21,7 @@ for f in "${archivos[@]}"; do
     if [[ "$nombre" == *.* ]]; then
         ext="${nombre##*.}"
     else
-        ext="(sin extension)"
+        ext="(sin_extension)"
     fi
     conteo["$ext"]=$(( ${conteo["$ext"]:-0} + 1 ))
     bytes=$(stat -c%s "$f" 2>/dev/null || echo 0)
@@ -38,7 +38,7 @@ for semana in "$REPO"/semana*/; do
     fi
 done
 # --- 4. Matriz de resumen por semana ---
-mapfile -t semana < <(ls -d "$REPO"/semana*/ 2>/dev/null | sort)
+mapfile -t semanas < <(ls -d "$REPO"/semana*/ 2>/dev/null | sort)
 COLS=3    # scripts, docs, tamano_kb
 declare -a matriz_sem
 
@@ -66,7 +66,7 @@ echo "=== ARCHIVOS POR EXTENSION ==="
 echo ""
 echo "=== RESUMEN POR SEMANA ==="
 printf "%-12s %-4s %-4s %-10s %-8s\n" "SEMANA" "SH" "MD" "SIZE_KB" "README"
-printf "%s\n" "--------------------------------------------------"
+printf "%s\n" "-----------------------------------------"
 for (( i=0; i<${#semanas[@]}; i++ )); do
     nombre=$(basename "${semanas[$i]}")
     printf "%-12s %-4s %-4s %-10s %-8s\n" \
