@@ -27,3 +27,13 @@ for f in "${archivos[@]}"; do
     bytes=$(stat -c%s "$f" 2>/dev/null || echo 0)
     tamano_ext["$ext"]=$(( ${tamano_ext["$ext"]:-0} + bytes ))
 done
+# --- 3. Estado de README por semana ---
+declare -A tiene_readme
+for semana in "$REPO"/semana*/; do
+    nombre=$(basename "$semana")
+    if [[ -f "$semana/README.md" ]]; then
+        tiene_readme["$nombre"]="si"
+    else
+        tiene_readme["$nombre"]="NO"
+    fi
+done
