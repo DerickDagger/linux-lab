@@ -1,0 +1,25 @@
+=============================================
+REPORTE DE PROCESOS - 2026-04-30 20:32:18
+Sistema: derick-VirtualBox | Usuario: derick
+=============================================
+
+--- Top 5 procesos por CPU ---
+derick   PID:3671   CPU:  4.2% MEM:  9.7% /usr/lib/firefox/firefox-bin
+derick   PID:3641   CPU:  4.0% MEM:  7.9% /usr/lib/firefox/firefox-bin
+derick   PID:1328   CPU:  3.6% MEM:  7.6% cinnamon
+derick   PID:3932   CPU:  2.1% MEM:  8.4% /usr/lib/firefox/firefox-bin
+derick   PID:1711   CPU:  1.6% MEM: 16.2% /usr/lib/firefox/firefox
+
+--- Top 5 procesos por MEM ---
+derick   PID:1711   CPU:  1.6% MEM: 16.2% /usr/lib/firefox/firefox
+derick   PID:3671   CPU:  4.2% MEM:  9.7% /usr/lib/firefox/firefox-bin
+derick   PID:3932   CPU:  2.1% MEM:  8.4% /usr/lib/firefox/firefox-bin
+derick   PID:3641   CPU:  4.0% MEM:  7.9% /usr/lib/firefox/firefox-bin
+derick   PID:1328   CPU:  3.6% MEM:  7.6% cinnamon
+
+--- Procesos zombie ---
+Ninguno detectado
+
+--- Verificando procesos vigilados ---
+[0;32m[2026-04-30 20:32:18] [OK] Proceso 'bash' activo (PID: 4178)[0m
+[0;33m[2026-04-30 20:32:18] [WARNING] Proceso 'sshd' no encontrado[0m

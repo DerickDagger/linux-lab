@@ -1,0 +1,553 @@
+=============================================
+REPORTE DE PROCESOS - 2026-04-30 20:31:43
+Sistema: derick-VirtualBox | Usuario: derick
+=============================================
+
+--- Top 5 procesos por CPU ---
+derick   PID:4965   CPU: 50.0% MEM:  0.1% ps
+derick   PID:3671   CPU:  4.3% MEM:  9.7% /usr/lib/firefox/firefox-bin
+derick   PID:3641   CPU:  4.1% MEM:  7.9% /usr/lib/firefox/firefox-bin
+derick   PID:1328   CPU:  3.5% MEM:  7.6% cinnamon
+derick   PID:3932   CPU:  2.2% MEM:  8.4% /usr/lib/firefox/firefox-bin
+
+--- Top 5 procesos por MEM ---
+derick   PID:1711   CPU:  1.6% MEM: 16.2% /usr/lib/firefox/firefox
+derick   PID:3671   CPU:  4.3% MEM:  9.7% /usr/lib/firefox/firefox-bin
+derick   PID:3932   CPU:  2.2% MEM:  8.4% /usr/lib/firefox/firefox-bin
+derick   PID:3641   CPU:  4.1% MEM:  7.9% /usr/lib/firefox/firefox-bin
+derick   PID:1328   CPU:  3.5% MEM:  7.6% cinnamon
+
+--- Procesos zombie ---
+Ninguno detectado
+
+--- Árbol de procesos de 'derick' ---
+at-spi2-registr(1215)-+-{at-spi2-registr}(1233)
+                      |-{at-spi2-registr}(1234)
+                      `-{at-spi2-registr}(1235)
+
+crashhelper(3407)---{crashhelper}(3408)
+
+csd-printer(1219)-+-{csd-printer}(1225)
+                  |-{csd-printer}(1226)
+                  `-{csd-printer}(1227)
+
+ibus-daemon(1069)-+-ibus-engine-sim(1313)-+-{ibus-engine-sim}(1314)
+                  |                       |-{ibus-engine-sim}(1315)
+                  |                       `-{ibus-engine-sim}(1316)
+                  |-ibus-extension-(1091)-+-{ibus-extension-}(1126)
+                  |                       |-{ibus-extension-}(1127)
+                  |                       |-{ibus-extension-}(1128)
+                  |                       `-{ibus-extension-}(1246)
+                  |-ibus-memconf(1086)-+-{ibus-memconf}(1088)
+                  |                    |-{ibus-memconf}(1089)
+                  |                    `-{ibus-memconf}(1090)
+                  |-ibus-ui-gtk3(1087)-+-{ibus-ui-gtk3}(1121)
+                  |                    |-{ibus-ui-gtk3}(1122)
+                  |                    |-{ibus-ui-gtk3}(1123)
+                  |                    |-{ibus-ui-gtk3}(1220)
+                  |                    `-{ibus-ui-gtk3}(1247)
+                  |-{ibus-daemon}(1070)
+                  |-{ibus-daemon}(1071)
+                  `-{ibus-daemon}(1072)
+
+ibus-x11(1094)-+-{ibus-x11}(1124)
+               |-{ibus-x11}(1125)
+               `-{ibus-x11}(1129)
+
+cinnamon-sessio(955)-+-agent(1387)-+-{agent}(1400)
+                     |             |-{agent}(1401)
+                     |             `-{agent}(1403)
+                     |-applet.py(1678)
+                     |-at-spi-bus-laun(1135)-+-dbus-daemon(1169)
+                     |                       |-{at-spi-bus-laun}(1161)
+                     |                       |-{at-spi-bus-laun}(1165)
+                     |                       |-{at-spi-bus-laun}(1166)
+                     |                       `-{at-spi-bus-laun}(1168)
+                     |-blueman-applet(1379)-+-{blueman-applet}(1409)
+                     |                      |-{blueman-applet}(1410)
+                     |                      |-{blueman-applet}(1413)
+                     |                      `-{blueman-applet}(1436)
+                     |-cinnamon-killer(1389)-+-{cinnamon-killer}(1415)
+                     |                       |-{cinnamon-killer}(1416)
+                     |                       |-{cinnamon-killer}(1417)
+                     |                       `-{cinnamon-killer}(1422)
+                     |-cinnamon-launch(1322)-+-cinnamon(1328)-+-firefox-bin(1711)-+-forkserver(3458)-+-Isolated Servic(3618)-+-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       `-{Iso+
+                     |                       |                |                   |                  |-Isolated Web Co(3641)-+-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       `-{Iso+
+                     |                       |                |                   |                  |-Isolated Web Co(3671)-+-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       |-{Iso+
+                     |                       |                |                   |                  |                       `-{Iso+
+                     |                       |                |                   |                  |-Privileged Cont(3509)-+-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       |-{Pri+
+                     |                       |                |                   |                  |                       `-{Pri+
+                     |                       |                |                   |                  |-RDD Process(3525)-+-{RDD Pro+
+                     |                       |                |                   |                  |                   |-{RDD Pro+
+                     |                       |                |                   |                  |                   |-{RDD Pro+
+                     |                       |                |                   |                  |                   `-{RDD Pro+
+                     |                       |                |                   |                  |-Socket Process(3461)-+-{Sock+
+                     |                       |                |                   |                  |                      |-{Sock+
+                     |                       |                |                   |                  |                      |-{Sock+
+                     |                       |                |                   |                  |                      |-{Sock+
+                     |                       |                |                   |                  |                      `-{Sock+
+                     |                       |                |                   |                  |-Utility Process(3615)-+-{Uti+
+                     |                       |                |                   |                  |                       |-{Uti+
+                     |                       |                |                   |                  |                       |-{Uti+
+                     |                       |                |                   |                  |                       `-{Uti+
+                     |                       |                |                   |                  |-Web Content(3762)-+-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   `-{Web Con+
+                     |                       |                |                   |                  |-Web Content(3769)-+-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   `-{Web Con+
+                     |                       |                |                   |                  |-Web Content(4080)-+-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   |-{Web Con+
+                     |                       |                |                   |                  |                   `-{Web Con+
+                     |                       |                |                   |                  |-WebExtensions(3588)-+-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     |-{WebEx+
+                     |                       |                |                   |                  |                     `-{WebEx+
+                     |                       |                |                   |                  `-file:// Content(3932)-+-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          |-{fil+
+                     |                       |                |                   |                                          `-{fil+
+                     |                       |                |                   |-{firefox-bin}(3405)
+                     |                       |                |                   |-{firefox-bin}(3409)
+                     |                       |                |                   |-{firefox-bin}(3410)
+                     |                       |                |                   |-{firefox-bin}(3412)
+                     |                       |                |                   |-{firefox-bin}(3413)
+                     |                       |                |                   |-{firefox-bin}(3415)
+                     |                       |                |                   |-{firefox-bin}(3416)
+                     |                       |                |                   |-{firefox-bin}(3417)
+                     |                       |                |                   |-{firefox-bin}(3418)
+                     |                       |                |                   |-{firefox-bin}(3419)
+                     |                       |                |                   |-{firefox-bin}(3421)
+                     |                       |                |                   |-{firefox-bin}(3430)
+                     |                       |                |                   |-{firefox-bin}(3431)
+                     |                       |                |                   |-{firefox-bin}(3434)
+                     |                       |                |                   |-{firefox-bin}(3436)
+                     |                       |                |                   |-{firefox-bin}(3437)
+                     |                       |                |                   |-{firefox-bin}(3439)
+                     |                       |                |                   |-{firefox-bin}(3440)
+                     |                       |                |                   |-{firefox-bin}(3444)
+                     |                       |                |                   |-{firefox-bin}(3446)
+                     |                       |                |                   |-{firefox-bin}(3447)
+                     |                       |                |                   |-{firefox-bin}(3448)
+                     |                       |                |                   |-{firefox-bin}(3449)
+                     |                       |                |                   |-{firefox-bin}(3450)
+                     |                       |                |                   |-{firefox-bin}(3451)
+                     |                       |                |                   |-{firefox-bin}(3452)
+                     |                       |                |                   |-{firefox-bin}(3453)
+                     |                       |                |                   |-{firefox-bin}(3454)
+                     |                       |                |                   |-{firefox-bin}(3455)
+                     |                       |                |                   |-{firefox-bin}(3456)
+                     |                       |                |                   |-{firefox-bin}(3457)
+                     |                       |                |                   |-{firefox-bin}(3459)
+                     |                       |                |                   |-{firefox-bin}(3460)
+                     |                       |                |                   |-{firefox-bin}(3470)
+                     |                       |                |                   |-{firefox-bin}(3520)
+                     |                       |                |                   |-{firefox-bin}(3521)
+                     |                       |                |                   |-{firefox-bin}(3522)
+                     |                       |                |                   |-{firefox-bin}(3523)
+                     |                       |                |                   |-{firefox-bin}(3524)
+                     |                       |                |                   |-{firefox-bin}(3542)
+                     |                       |                |                   |-{firefox-bin}(3543)
+                     |                       |                |                   |-{firefox-bin}(3544)
+                     |                       |                |                   |-{firefox-bin}(3545)
+                     |                       |                |                   |-{firefox-bin}(3546)
+                     |                       |                |                   |-{firefox-bin}(3547)
+                     |                       |                |                   |-{firefox-bin}(3548)
+                     |                       |                |                   |-{firefox-bin}(3549)
+                     |                       |                |                   |-{firefox-bin}(3553)
+                     |                       |                |                   |-{firefox-bin}(3567)
+                     |                       |                |                   |-{firefox-bin}(3568)
+                     |                       |                |                   |-{firefox-bin}(3570)
+                     |                       |                |                   |-{firefox-bin}(3571)
+                     |                       |                |                   |-{firefox-bin}(3578)
+                     |                       |                |                   |-{firefox-bin}(3580)
+                     |                       |                |                   |-{firefox-bin}(3581)
+                     |                       |                |                   |-{firefox-bin}(3591)
+                     |                       |                |                   |-{firefox-bin}(3596)
+                     |                       |                |                   |-{firefox-bin}(3601)
+                     |                       |                |                   |-{firefox-bin}(3608)
+                     |                       |                |                   |-{firefox-bin}(3614)
+                     |                       |                |                   |-{firefox-bin}(3622)
+                     |                       |                |                   |-{firefox-bin}(3628)
+                     |                       |                |                   |-{firefox-bin}(3643)
+                     |                       |                |                   |-{firefox-bin}(3670)
+                     |                       |                |                   |-{firefox-bin}(3682)
+                     |                       |                |                   |-{firefox-bin}(3716)
+                     |                       |                |                   |-{firefox-bin}(3718)
+                     |                       |                |                   |-{firefox-bin}(3719)
+                     |                       |                |                   |-{firefox-bin}(3755)
+                     |                       |                |                   |-{firefox-bin}(3760)
+                     |                       |                |                   |-{firefox-bin}(3761)
+                     |                       |                |                   |-{firefox-bin}(3763)
+                     |                       |                |                   |-{firefox-bin}(3772)
+                     |                       |                |                   |-{firefox-bin}(3808)
+                     |                       |                |                   |-{firefox-bin}(3809)
+                     |                       |                |                   |-{firefox-bin}(3810)
+                     |                       |                |                   |-{firefox-bin}(3811)
+                     |                       |                |                   |-{firefox-bin}(3812)
+                     |                       |                |                   |-{firefox-bin}(3815)
+                     |                       |                |                   |-{firefox-bin}(3841)
+                     |                       |                |                   |-{firefox-bin}(3933)
+                     |                       |                |                   |-{firefox-bin}(4065)
+                     |                       |                |                   |-{firefox-bin}(4066)
+                     |                       |                |                   |-{firefox-bin}(4082)
+                     |                       |                |                   |-{firefox-bin}(4666)
+                     |                       |                |                   |-{firefox-bin}(4799)
+                     |                       |                |                   `-{firefox-bin}(4845)
+                     |                       |                |-nemo(4188)-+-{nemo}(4192)
+                     |                       |                |            |-{nemo}(4193)
+                     |                       |                |            |-{nemo}(4194)
+                     |                       |                |            |-{nemo}(4196)
+                     |                       |                |            `-{nemo}(4199)
+                     |                       |                |-{cinnamon}(1334)
+                     |                       |                |-{cinnamon}(1335)
+                     |                       |                |-{cinnamon}(1337)
+                     |                       |                |-{cinnamon}(1338)
+                     |                       |                |-{cinnamon}(1339)
+                     |                       |                |-{cinnamon}(1340)
+                     |                       |                |-{cinnamon}(1341)
+                     |                       |                |-{cinnamon}(1342)
+                     |                       |                |-{cinnamon}(1343)
+                     |                       |                |-{cinnamon}(1346)
+                     |                       |                |-{cinnamon}(1347)
+                     |                       |                |-{cinnamon}(1348)
+                     |                       |                |-{cinnamon}(1541)
+                     |                       |                `-{cinnamon}(1830)
+                     |                       |-{cinnamon-launch}(1325)
+                     |                       |-{cinnamon-launch}(1326)
+                     |                       |-{cinnamon-launch}(1327)
+                     |                       |-{cinnamon-launch}(1329)
+                     |                       |-{cinnamon-launch}(1330)
+                     |                       `-{cinnamon-launch}(1331)
+                     |-csd-a11y-settin(1131)-+-{csd-a11y-settin}(1148)
+                     |                       |-{csd-a11y-settin}(1149)
+                     |                       |-{csd-a11y-settin}(1155)
+                     |                       `-{csd-a11y-settin}(1162)
+                     |-csd-automount(1142)-+-{csd-automount}(1187)
+                     |                     |-{csd-automount}(1188)
+                     |                     |-{csd-automount}(1195)
+                     |                     `-{csd-automount}(1210)
+                     |-csd-background(1130)-+-{csd-background}(1184)
+                     |                      |-{csd-background}(1185)
+                     |                      |-{csd-background}(1186)
+                     |                      `-{csd-background}(1214)
+                     |-csd-clipboard(1137)-+-{csd-clipboard}(1193)
+                     |                     |-{csd-clipboard}(1194)
+                     |                     `-{csd-clipboard}(1198)
+                     |-csd-color(1143)-+-{csd-color}(1222)
+                     |                 |-{csd-color}(1223)
+                     |                 |-{csd-color}(1224)
+                     |                 `-{csd-color}(1228)
+                     |-csd-housekeepin(1136)-+-{csd-housekeepin}(1190)
+                     |                       |-{csd-housekeepin}(1191)
+                     |                       |-{csd-housekeepin}(1192)
+                     |                       `-{csd-housekeepin}(1211)
+                     |-csd-keyboard(1147)-+-{csd-keyboard}(1199)
+                     |                    |-{csd-keyboard}(1200)
+                     |                    |-{csd-keyboard}(1202)
+                     |                    `-{csd-keyboard}(1207)
+                     |-csd-media-keys(1151)-+-{csd-media-keys}(1263)
+                     |                      |-{csd-media-keys}(1264)
+                     |                      |-{csd-media-keys}(1265)
+                     |                      `-{csd-media-keys}(1279)
+                     |-csd-power(1141)-+-{csd-power}(1203)
+                     |                 |-{csd-power}(1204)
+                     |                 |-{csd-power}(1205)
+                     |                 `-{csd-power}(1221)
+                     |-csd-print-notif(1133)-+-{csd-print-notif}(1156)
+                     |                       |-{csd-print-notif}(1157)
+                     |                       `-{csd-print-notif}(1163)
+                     |-csd-screensaver(1139)-+-{csd-screensaver}(1145)
+                     |                       |-{csd-screensaver}(1146)
+                     |                       `-{csd-screensaver}(1152)
+                     |-csd-settings-re(1140)-+-{csd-settings-re}(1153)
+                     |                       |-{csd-settings-re}(1154)
+                     |                       |-{csd-settings-re}(1158)
+                     |                       `-{csd-settings-re}(1170)
+                     |-csd-wacom(1132)-+-{csd-wacom}(1196)
+                     |                 |-{csd-wacom}(1197)
+                     |                 `-{csd-wacom}(1201)
+                     |-csd-xsettings(1144)-+-{csd-xsettings}(1182)
+                     |                     |-{csd-xsettings}(1183)
+                     |                     |-{csd-xsettings}(1189)
+                     |                     `-{csd-xsettings}(1206)
+                     |-evolution-alarm(1392)-+-{evolution-alarm}(1460)
+                     |                       |-{evolution-alarm}(1461)
+                     |                       |-{evolution-alarm}(1462)
+                     |                       |-{evolution-alarm}(1464)
+                     |                       |-{evolution-alarm}(1465)
+                     |                       |-{evolution-alarm}(1543)
+                     |                       `-{evolution-alarm}(1545)
+                     |-nemo-desktop(1383)-+-{nemo-desktop}(1426)
+                     |                    |-{nemo-desktop}(1427)
+                     |                    |-{nemo-desktop}(1428)
+                     |                    |-{nemo-desktop}(1429)
+                     |                    `-{nemo-desktop}(1561)
+                     |-xapp-sn-watcher(1356)-+-{xapp-sn-watcher}(1373)
+                     |                       |-{xapp-sn-watcher}(1374)
+                     |                       |-{xapp-sn-watcher}(1375)
+                     |                       `-{xapp-sn-watcher}(1376)
+                     |-{cinnamon-sessio}(1074)
+                     |-{cinnamon-sessio}(1075)
+                     |-{cinnamon-sessio}(1076)
+                     `-{cinnamon-sessio}(1077)
+
+mintUpdate(1628)-+-{mintUpdate}(1629)
+                 |-{mintUpdate}(1630)
+                 |-{mintUpdate}(1631)
+                 |-{mintUpdate}(1632)
+                 |-{mintUpdate}(1633)
+                 |-{mintUpdate}(1636)
+                 |-{mintUpdate}(1658)
+                 `-{mintUpdate}(1659)
+
+mintreport-tray(1688)-+-{mintreport-tray}(1689)
+                      |-{mintreport-tray}(1690)
+                      |-{mintreport-tray}(1691)
+                      `-{mintreport-tray}(1694)
+
+systemd(938)-+-(sd-pam)(939)
+             |-dbus-daemon(962)
+             |-dconf-service(1172)-+-{dconf-service}(1179)
+             |                     |-{dconf-service}(1180)
+             |                     `-{dconf-service}(1181)
+             |-evolution-addre(1577)-+-{evolution-addre}(1583)
+             |                       |-{evolution-addre}(1584)
+             |                       |-{evolution-addre}(1585)
+             |                       |-{evolution-addre}(1587)
+             |                       |-{evolution-addre}(1588)
+             |                       `-{evolution-addre}(1590)
+             |-evolution-calen(1546)-+-{evolution-calen}(1547)
+             |                       |-{evolution-calen}(1548)
+             |                       |-{evolution-calen}(1549)
+             |                       |-{evolution-calen}(1565)
+             |                       |-{evolution-calen}(1566)
+             |                       |-{evolution-calen}(1569)
+             |                       |-{evolution-calen}(1570)
+             |                       |-{evolution-calen}(1573)
+             |                       `-{evolution-calen}(1575)
+             |-evolution-sourc(1466)-+-{evolution-sourc}(1486)
+             |                       |-{evolution-sourc}(1487)
+             |                       |-{evolution-sourc}(1488)
+             |                       `-{evolution-sourc}(1489)
+             |-gnome-keyring-d(1116)-+-{gnome-keyring-d}(1117)
+             |                       |-{gnome-keyring-d}(1118)
+             |                       |-{gnome-keyring-d}(1119)
+             |                       `-{gnome-keyring-d}(1120)
+             |-gnome-terminal-(4166)-+-bash(4178)---monitor-proceso(4957)-+-monitor-proceso(4961)---pstree(4972)
+             |                       |                                    `-tee(4962)
+             |                       |-{gnome-terminal-}(4167)
+             |                       |-{gnome-terminal-}(4168)
+             |                       |-{gnome-terminal-}(4169)
+             |                       |-{gnome-terminal-}(4170)
+             |                       `-{gnome-terminal-}(4173)
+             |-goa-daemon(1276)-+-{goa-daemon}(1286)
+             |                  |-{goa-daemon}(1287)
+             |                  |-{goa-daemon}(1289)
+             |                  `-{goa-daemon}(1290)
+             |-goa-identity-se(1293)-+-{goa-identity-se}(1296)
+             |                       |-{goa-identity-se}(1297)
+             |                       `-{goa-identity-se}(1299)
+             |-gvfs-afc-volume(1245)-+-{gvfs-afc-volume}(1253)
+             |                       |-{gvfs-afc-volume}(1254)
+             |                       |-{gvfs-afc-volume}(1255)
+             |                       `-{gvfs-afc-volume}(1257)
+             |-gvfs-goa-volume(1270)-+-{gvfs-goa-volume}(1272)
+             |                       |-{gvfs-goa-volume}(1273)
+             |                       `-{gvfs-goa-volume}(1274)
+             |-gvfs-gphoto2-vo(1295)-+-{gvfs-gphoto2-vo}(1302)
+             |                       |-{gvfs-gphoto2-vo}(1303)
+             |                       `-{gvfs-gphoto2-vo}(1305)
+             |-gvfs-mtp-volume(1258)-+-{gvfs-mtp-volume}(1266)
+             |                       |-{gvfs-mtp-volume}(1267)
+             |                       `-{gvfs-mtp-volume}(1269)
+             |-gvfs-udisks2-vo(1236)-+-{gvfs-udisks2-vo}(1240)
+             |                       |-{gvfs-udisks2-vo}(1241)
+             |                       |-{gvfs-udisks2-vo}(1242)
+             |                       `-{gvfs-udisks2-vo}(1243)
+             |-gvfsd(1073)-+-gvfsd-trash(1552)-+-{gvfsd-trash}(1553)
+             |             |                   |-{gvfsd-trash}(1554)
+             |             |                   |-{gvfsd-trash}(1555)
+             |             |                   `-{gvfsd-trash}(1559)
+             |             |-{gvfsd}(1078)
+             |             |-{gvfsd}(1079)
+             |             `-{gvfsd}(1080)
+             |-gvfsd-fuse(1084)-+-{gvfsd-fuse}(1098)
+             |                  |-{gvfsd-fuse}(1099)
+             |                  |-{gvfsd-fuse}(1100)
+             |                  |-{gvfsd-fuse}(1101)
+             |                  |-{gvfsd-fuse}(1102)
+             |                  `-{gvfsd-fuse}(1103)
+             |-gvfsd-metadata(1607)-+-{gvfsd-metadata}(1608)
+             |                      |-{gvfsd-metadata}(1609)
+             |                      `-{gvfsd-metadata}(1610)
+             |-ibus-portal(1097)-+-{ibus-portal}(1104)
+             |                   |-{ibus-portal}(1105)
+             |                   `-{ibus-portal}(1106)
+             |-obexd(1438)
+             |-pipewire(951)-+-{pipewire}(972)
+             |               `-{pipewire}(987)
+             |-pipewire(952)-+-{pipewire}(970)
+             |               `-{pipewire}(975)
+             |-pipewire-pulse(954)-+-{pipewire-pulse}(971)
+             |                     `-{pipewire-pulse}(985)
+             |-wireplumber(953)-+-{wireplumber}(973)
+             |                  |-{wireplumber}(982)
+             |                  |-{wireplumber}(983)
+             |                  |-{wireplumber}(1003)
+             |                  `-{wireplumber}(1005)
+             |-xdg-desktop-por(1770)-+-{xdg-desktop-por}(1774)
+             |                       |-{xdg-desktop-por}(1775)
+             |                       |-{xdg-desktop-por}(1776)
+             |                       |-{xdg-desktop-por}(1817)
+             |                       |-{xdg-desktop-por}(1824)
+             |                       `-{xdg-desktop-por}(1825)
+             |-xdg-desktop-por(1797)-+-{xdg-desktop-por}(1800)
+             |                       |-{xdg-desktop-por}(1801)
+             |                       |-{xdg-desktop-por}(1802)
+             |                       `-{xdg-desktop-por}(1804)
+             |-xdg-desktop-por(1818)-+-{xdg-desktop-por}(1819)
+             |                       |-{xdg-desktop-por}(1820)
+             |                       |-{xdg-desktop-por}(1821)
+             |                       `-{xdg-desktop-por}(1823)
+             |-xdg-document-po(1784)-+-fusermount3(1793)
+             |                       |-{xdg-document-po}(1788)
+             |                       |-{xdg-document-po}(1789)
+             |                       |-{xdg-document-po}(1790)
+             |                       |-{xdg-document-po}(1792)
+             |                       |-{xdg-document-po}(1794)
+             |                       `-{xdg-document-po}(1795)
+             `-xdg-permission-(1778)-+-{xdg-permission-}(1780)
+                                     |-{xdg-permission-}(1781)
+                                     `-{xdg-permission-}(1783)
+
+--- Procesos con CPU > 50% ---
+Ninguno sobre el umbral
+
+=============================================
+Reporte guardado en: reportes/reporte-20260430-203143.txt
