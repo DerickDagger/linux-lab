@@ -60,3 +60,38 @@ log() {
 echo "Dev Stack Installer v$VERSION" > "$LOG_FILE"
 echo "Iniciado: $TIMESTAMP" >> "$LOG_FILE"
 echo "---" >> "$LOG_FILE"
+
+# === DETECCION DE OS ===
+detectar_os() {
+    log STEP "Detectando sistema operativo"
+    if [ -f /etc/os-release ]; then
+        source /etc/os-release
+        OS_ID=$ID
+        OS_VERSION=$VERSION_ID
+        OS_NAME=$PRETTY_NAME
+    else
+        log ERROR "No se puede detectar el OS (/etc/os-release no existe)"
+        exit 1
+    fi
+
+    case $OS_ID in
+        ubuntu|debian|linuxmint|pop)
+            PKG_UPDATE="apt update -qq"
+            PKG_INSTALL="apt install -y"
+            PKG_CHECK="dpkg -l"
+	    log OK "OS soportado: $OS_NAME"
+            ;;
+        *)
+        fedora|rhel|centos|rocky)
+            PKG_UPDATE="dnf check-update -q || true"
+            PKG_INSTALL="dnf install -y"
+            PKG_CHECK="rpm -q"
+	    log WARN "OS Red Hat detectado. Algunos paquetes pueden diferir."
+            ;;
+        *)
+            log ERROR "OS no soportado: $OS_ID"
+            log INFO "Soportados: ubuntu, debian, linuxmint, fedora, rhel"
+            exit 1
+            ;;
+    esac
+}
