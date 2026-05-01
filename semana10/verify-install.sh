@@ -35,7 +35,7 @@ verificar_paquete_deb() {
     local pkg=$2
     TOTAL=$((TOTAL + 1))
 
-    if dpkg -l "$pkg" &>/dev/null 2>&1; then
+    if dpkg -l "$pkg" 2>/dev/null | grep -q "^ii"; then
         local ver
         ver=$(dpkg -l "$pkg" | grep "^ii" | awk '{print $3}')
         echo -e "${GREEN}[OK]${NC} $nombre (v$ver)"
@@ -67,7 +67,6 @@ echo "--- Entorno de desarrollo ---"
 verificar_comando "Python 3"    python3 "--version"
 verificar_comando "pip3" 	pip3    "--version"
 verificar_paquete_deb "build-essential" "build-essential"
-
 echo ""
 echo "--- Utilidades de sistema ---"
 verificar_comando "unzip" 	unzip 	"-v"

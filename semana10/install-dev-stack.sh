@@ -93,6 +93,8 @@ detectar_os() {
             exit 1
             ;;
     esac
+
+    log INFO "OS: $OS_ID | Version: $OS_VERSION"
 }
 
 # === ROLLBACK ===
@@ -117,7 +119,7 @@ instalar_paquete() {
         return 0
     fi
 
-    if dpkg -l "$paquete" &>/dev/null; then
+    if dpkg -l "$paquete" &>/dev/null | grep -q "^ii"; then
         local version
         version=$(dpkg -l "$paquete" | grep "^ii" | awk '{print $3}')
         log OK "$descripcion ya instalado (v$version) -- omitido"
