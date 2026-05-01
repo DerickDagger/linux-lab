@@ -95,3 +95,72 @@ detectar_os() {
             ;;
     esac
 }
+
+# === ROLLBACK ===
+rollback() {
+    local exit_code=$?
+    if [ $exit_code -ne 0 ] && [ ${#PAQUETES_INSTALADOS[@]} -gt 0 ]; then
+        log WARN "Error detectado. Iniciando rollback..."
+        sudo apt purge -y "${PAQUETES_INSTALADOS[@]}" 2>/dev/null || true
+        sudo apt autoremove -y 2>/dev/null || true
+        log OK "Rollback completado. Paquetes revertidos: ${PAQUETES_INSTALADOS[*]}"
+    fi
+}
+trap rollback EXIT
+
+# === INSTALACION ===
+instalar_paquete() {
+    local paquete=$1
+    local descripcion=${2:-$paquete}
+
+    if $DRY_RUN; then
+        log INFO "[DRY-RUN] Se instalaria: $paquete"
+        return 0
+    fi
+
+    if dpkg -l "$paquete" &>/dev/null; then
+        local version
+        version=$(dpkg -l "$paquete" | grep "^ii" | awk '{print $3}')
+        log OK "$descripcion ya instalado (v$version) -- omitido"
+        PAQUETES_OMITIDOS+=("$paquete")
+    else
+        log INFO "Instalando $descripcion ($paquete)..."
+        if sudo $PKG_INSTALL "$paquete" >> "$LOG_FILE" 2>&1; then
+            log OK "$descripcion instalado correctamente"
+            PAQUETES_INSTALADOS+=("$paquete")
+        else
+            log ERROR "Fallo al instalar $paquete"
+            ERRORES=$((ERRORES + 1))
+            return 1
+        fi
+    fi
+}
+
+# === PAQUETES A INSTALAR ===
+instalar_dev_stack() {
+    log STEP "Actualizando lista de paquetes"
+    if ! $DRY_RUN; then
+        sudo $PKG_UPDATE >> "$LOG_FILE" 2>&1
+        log OK "Lista de paquetes actualizada"
+    fi
+
+    log STEP "Instalando herramientas esenciales"
+    instalar_paquete "git" 	     "Git (control de versiones)"
+    instalar_paquete "curl" 	     "curl (transferencia HTTP)"
+    instalar_paquete "wget" 	     "wget (descarga de archivos)"
+    instalar_paquete "vim" 	     "Vim (editor de texto)"
+    instalar_paquete "tree" 	     "tree (visualizar directorios)"
+    instalar_paquete "htop" 	     "htop (monitor de procesos)"
+    instalar_paquete "jq" 	     "jq (procesador JSON)"
+    instalar_paquete "net-tools"     "net-tools (herramientas de red)"
+
+    log STEP "Instalando entorno de desarrollo"
+    instalar_paquete "python3" 	     "Python 3"
+    instalar_paquete "python3-pip"   "pip3 (gestor paquetes Python)"
+    instalar_paquete "build-essential" "build-essential (compilacion C/C++)"
+
+    log STEP "Instalando utilidades de sistema"
+    instalar_paquete "unzip" 	     "unzip"
+    instalar_paquete "tmux" 	     "tmux (terminal multiplexer)"
+    instalar_paquete "shellcheck"    "ShellCheck (linter Bash)"
+}
